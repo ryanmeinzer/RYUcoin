@@ -16,7 +16,7 @@ app.post('/api/mine', (req, res) => {
 
     blockchain.addBlock({ data })
 
-    res.redirect('api/blocks')
+    res.redirect('/api/blocks')
 })
 
 const PORT = 3000
