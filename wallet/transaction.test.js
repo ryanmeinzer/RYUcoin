@@ -1,6 +1,4 @@
-const Wallet = require(".")
-
-const Transaction = requre('./transaction')
+const Transaction = require('./transaction')
 const Wallet = require('./index')
 
 describe('Transaction', () => {
