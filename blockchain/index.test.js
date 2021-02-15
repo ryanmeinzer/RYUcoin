@@ -159,6 +159,19 @@ describe('when the chain starts with the genesis block and has multiple blocks',
                 })
             })
         })
+
+        describe('and the `validateTransactions` flag is true', () => {
+            it('calls validTransactionData()', () => {
+                const validTransactionDataMock = jest.fn()
+
+                blockchain.validTransactionData = validTransactionDataMock
+
+                newChain.addBlock({ data: 'foo' })
+                blockchain.replaceChain(newChain.chain, true)
+
+                expect(validTransactionDataMock).toHaveBeenCalled()
+            })
+        })
     })
 
     describe('validTransactionData', () => {
@@ -242,7 +255,7 @@ describe('when the chain starts with the genesis block and has multiple blocks',
                 newChain.addBlock({
                     data: [transaction, transaction, transaction, rewardTransaction]
                 })
-                
+
                 expect(blockchain.validTransactionData({ chain: newChain.chain })).toBe(false)
                 expect(errorMock).toHaveBeenCalled()
             })
