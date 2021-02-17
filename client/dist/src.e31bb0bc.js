@@ -47073,13 +47073,30 @@ var ConductTransaction = /*#__PURE__*/function (_Component) {
       _this.setState({
         amount: Number(event.target.value)
       });
+    }, _this.conductTransaction = function () {
+      var _this$state = _this.state,
+          recipient = _this$state.recipient,
+          amount = _this$state.amount;
+      fetch('http://localhost:3000/api/transact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          recipient: recipient,
+          amount: amount
+        })
+      }).then(function (response) {
+        return response.json();
+      }).then(function (json) {
+        alert(json.message || json.type);
+      });
     }, _temp));
   }
 
   _createClass(ConductTransaction, [{
     key: "render",
     value: function render() {
-      console.log('this.state', this.state);
       return _react.default.createElement("div", {
         className: "ConductTransaction"
       }, _react.default.createElement(_reactRouterDom.Link, {
@@ -47094,7 +47111,10 @@ var ConductTransaction = /*#__PURE__*/function (_Component) {
         placeholder: "amount",
         value: this.state.amount,
         onChange: this.updateAmount
-      })));
+      })), _react.default.createElement("div", null, _react.default.createElement(_reactBootstrap.Button, {
+        bsStyle: "danger",
+        onClick: this.conductTransaction
+      }, "Submit")));
     }
   }]);
 
@@ -47236,7 +47256,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "51956" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64197" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
