@@ -28812,7 +28812,11 @@ var App = /*#__PURE__*/function (_Component) {
         to: "/transaction-pool"
       }, "Transaction Pool")), _react.default.createElement("br", null), _react.default.createElement("div", {
         className: "WalletInfo"
-      }, _react.default.createElement("div", null, "Address: ", address), _react.default.createElement("div", null, "Balance: ", balance)));
+      }, _react.default.createElement("div", null, "Address: ", address), _react.default.createElement("div", null, "Balance: ", balance)), _react.default.createElement("br", null), _react.default.createElement("div", {
+        className: "join"
+      }, _react.default.createElement("a", {
+        href: "https://github.com/ryanmeinzer/RYUcoin-peer"
+      }, "Join")));
     }
   }]);
 
@@ -47452,7 +47456,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "59418" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "62284" + '/');
 
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
