@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
+import { Button } from 'react-bootstrap'
 
 class App extends Component {
     state = { walletInfo: { } }
@@ -24,14 +25,25 @@ class App extends Component {
                 <div><Link to='/conduct-transaction'>Conduct a Transaction</Link></div>
                 <div><Link to='/transaction-pool'>Transaction Pool</Link></div>
                 <br />
-                <div className="WalletInfo">
+                {/* <div className="WalletInfo">
                     <div>Address: {address}</div>
                     <div>Balance: { balance }</div>
                 </div>
-                <br />
-                <div className='join'>
+                <br /> */}
+                <Button
+                    bsStyle="danger"
+                    onClick={
+                        (e) => {
+                        e.preventDefault()
+                        window.location.href='https://github.com/ryanmeinzer/RYUcoin-peer'
+                        }
+                    }
+                >
+                    Join to get 1,000 RYU
+                </Button>
+                {/* <div className='join'>
                     <a href="https://github.com/ryanmeinzer/RYUcoin-peer" target="_blank">Join</a>
-                </div>
+                </div> */}
             </div>
         )
     }

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Button } from 'react-bootstrap'
+// import { Button } from 'react-bootstrap'
 import Transaction from './Transaction'
 import { Link } from 'react-router-dom'
 import history from '../history'
@@ -56,12 +56,12 @@ class TransactionPool extends Component {
                     })
                 }
                 <hr />
-                <Button
+                {/* <Button
                     bsStyle="danger"
                     onClick={this.fetchMineTransactions}
                 >
                     Mine the Transactions
-                </Button>
+                </Button> */}
             </div>
         )
     }
