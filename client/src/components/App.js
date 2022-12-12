@@ -2,15 +2,8 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import {Button} from 'react-bootstrap'
-import {createClient} from 'redis'
 
-const client = createClient({url: process.env.REDIS_URL});
-
-// const redis = require("redis")
-// const client = redis.createClient({url: process.env.REDIS_URL})
-
-console.log('REDIS_URL:', process.env.REDIS_URL)
-console.log('client:', client)
+console.log('REDIS_URL', process.env.REDIS_URL)
 
 class App extends Component {
     state = { walletInfo: { } }
