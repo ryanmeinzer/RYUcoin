@@ -3,7 +3,13 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import {Button} from 'react-bootstrap'
 
-console.log('REDIS_URL', process.env.REDIS_URL)
+const redisUrl = process.env.REDIS_URL
+const redistUrlLastChar = redisUrl.slice(-1)
+const redisUrlCorrected = redisUrl.slice(0, -1) + (redistUrlLastChar + 1)
+
+const REDIS_URL = isDevelopment ? 'redis://127.0.0.1:6379' :
+    `${redisUrlCorrected}`
+console.log('REDIS_URL', redisUrlCorrected)
 
 class App extends Component {
     state = { walletInfo: { } }

@@ -10,8 +10,13 @@ const TransactionMiner = require('./app/transaction-miner')
 
 const isDevelopment = process.env.ENV === 'development'
 
+const redisUrl = process.env.REDIS_URL
+const redistUrlLastChar = redisUrl.slice(-1)
+const redisUrlCorrected = redisUrl.slice(0, -1) + (redistUrlLastChar +1)
+
 const REDIS_URL = isDevelopment ? 'redis://127.0.0.1:6379' :
-    'redis://:pec638600f47ca76f4c8f3d9763b2d71b3a168e3d69ae89f610dafe036335b771@ec2-34-233-87-69.compute-1.amazonaws.com:14720'
+    `${redisUrlCorrected}`
+    
 const DEFAULT_PORT = 3000
 const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`
 
