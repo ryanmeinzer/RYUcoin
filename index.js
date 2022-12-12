@@ -15,7 +15,7 @@ const REDIS_URL = isDevelopment ? 'redis://127.0.0.1:6379' :
 const DEFAULT_PORT = 3000
 const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`
 
-console.log(REDIS_URL)
+console.log('REDIS_URL:', REDIS_URL)
 
 const app = express()
 const blockchain = new Blockchain()
