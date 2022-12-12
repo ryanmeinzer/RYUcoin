@@ -19,7 +19,7 @@ const length = amazonId.length
 const amazonIdCorrected = parseInt(redisUrl.slice(index + length)) + 1
 const redisUrlCorrected = redisUrl.slice(0, index) + amazonIdCorrected
 
-console.log('redisUrlCorrected', redisUrlCorrected)
+console.log('index.js -> redisUrlCorrected', redisUrlCorrected)
 
 const REDIS_URL = isDevelopment ? 'redis://127.0.0.1:6379' :
     'redis://:pec638600f47ca76f4c8f3d9763b2d71b3a168e3d69ae89f610dafe036335b771@ec2-34-233-87-69.compute-1.amazonaws.com:14720'
