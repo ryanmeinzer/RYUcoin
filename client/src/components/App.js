@@ -11,7 +11,7 @@ const length = amazonId.length
 
 const amazonIdCorrected = parseInt(redisUrl.slice(index + length)) + 1
 
-const redisUrlCorrected = redisUrl.slice(index, 0) + amazonIdCorrected
+const redisUrlCorrected = redisUrl.slice(index, length) + amazonIdCorrected
 
 // const redistUrlLastChar = redisUrl.at(-2)
 // const redisUrlCorrected = redisUrl.slice(0, -2) + (parseInt(redistUrlLastChar) + 1)
