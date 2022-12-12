@@ -9,14 +9,17 @@ const amazonId = 'amazonaws.com:'
 const index = redisUrl.indexOf(amazonId)
 const length = amazonId.length
 
-const redisUrlCorrected = redisUrl.slice(index + length)
+const amazonIdCorrected = parseInt(redisUrl.slice(index + length)) + 1
+
+const redisUrlCorrected = redisUrl.slice(index) + amazonIdCorrected
 
 // const redistUrlLastChar = redisUrl.at(-2)
 // const redisUrlCorrected = redisUrl.slice(0, -2) + (parseInt(redistUrlLastChar) + 1)
 
 console.log('redisUrl', redisUrl)
 console.log('amazonId', amazonId)
-console.log('redisUrlCorrectedL', redisUrlCorrected)
+console.log('amazonIdCorrected', amazonIdCorrected)
+console.log('redisUrlCorrected', redisUrlCorrected)
 
 class App extends Component {
     state = { walletInfo: { } }
