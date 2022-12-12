@@ -4,11 +4,19 @@ import logo from '../assets/logo.png'
 import {Button} from 'react-bootstrap'
 
 const redisUrl = process.env.REDIS_URL
-const redistUrlLastChar = redisUrl.at(-2)
-const redisUrlCorrected = redisUrl.slice(0, -2) + (parseInt(redistUrlLastChar) + 1)
+const amazonId = 'amazonaws.com:'
+
+const index = redisUrl.indexOf(amazonId)
+const length = amazonId.length
+
+const redisUrlCorrected = redisUrl.slice(index + length)
+
+// const redistUrlLastChar = redisUrl.at(-2)
+// const redisUrlCorrected = redisUrl.slice(0, -2) + (parseInt(redistUrlLastChar) + 1)
+
 console.log('redisUrl', redisUrl)
-console.log('redistUrlLastChar', redistUrlLastChar)
-console.log('REDIS_URL', redisUrlCorrected)
+console.log('amazonId', amazonId)
+console.log('redisUrlCorrectedL', redisUrlCorrected)
 
 class App extends Component {
     state = { walletInfo: { } }
