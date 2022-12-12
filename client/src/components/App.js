@@ -5,10 +5,10 @@ import {Button} from 'react-bootstrap'
 
 const redisUrl = process.env.REDIS_URL
 const redistUrlLastChar = redisUrl.at(-1)
-// const redisUrlCorrected = redisUrl.slice(0, -1) + (parseInt(redistUrlLastChar) + 1)
+const redisUrlCorrected = redisUrl.slice(0, -1) + (parseInt(redistUrlLastChar) + 1)
 console.log('redisUrl', redisUrl)
 console.log('redistUrlLastChar', redistUrlLastChar)
-// console.log('REDIS_URL', redisUrlCorrected)
+console.log('REDIS_URL', redisUrlCorrected)
 
 class App extends Component {
     state = { walletInfo: { } }
