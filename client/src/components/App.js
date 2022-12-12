@@ -4,10 +4,10 @@ import logo from '../assets/logo.png'
 import {Button} from 'react-bootstrap'
 
 const redisUrl = process.env.REDIS_URL
-// const redistUrlLastChar = redisUrl.slice(-1)
+const redistUrlLastChar = redisUrl.at(-1)
 // const redisUrlCorrected = redisUrl.slice(0, -1) + (parseInt(redistUrlLastChar) + 1)
-console.log('REDIS_URL', redisUrl)
-// console.log('REDIS_URL', redistUrlLastChar)
+console.log('redisUrl', redisUrl)
+console.log('redistUrlLastChar', redistUrlLastChar)
 // console.log('REDIS_URL', redisUrlCorrected)
 
 class App extends Component {
