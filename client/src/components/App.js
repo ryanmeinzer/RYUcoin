@@ -3,6 +3,17 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/logo.png'
 import {Button} from 'react-bootstrap'
 
+const redisUrl = process.env.REDIS_URL
+const amazonId = 'amazonaws.com:'
+
+const index = redisUrl.indexOf(amazonId)
+const length = amazonId.length
+
+const amazonIdCorrected = parseInt(redisUrl.slice(index + length)) + 1
+const redisUrlCorrected = redisUrl.slice(0, index) + amazonIdCorrected
+
+console.log('redisUrlCorrected', redisUrlCorrected)
+
 class App extends Component {
     state = { walletInfo: { } }
 
