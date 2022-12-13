@@ -19,7 +19,7 @@ const index = redisUrl.indexOf(amazonId)
 const length = amazonId.length
 
 const amazonIdCorrected = parseInt(redisUrl.slice(index + length)) + 1
-const redisUrlCorrected = redisUrl.slice(0, index) + amazonIdCorrected
+const redisUrlCorrected = redisUrl.slice(0, index + length) + amazonIdCorrected
 
 console.log('index.js -> redisUrlCorrected', redisUrlCorrected)
 
