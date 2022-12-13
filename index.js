@@ -24,7 +24,8 @@ const redisUrlCorrected = redisUrl.slice(0, index + length) + amazonIdCorrected
 console.log('index.js -> redisUrlCorrected', redisUrlCorrected)
 
 const REDIS_URL = isDevelopment ? 'redis://127.0.0.1:6379' : 
-    redisUrlCorrected
+    redisUrl
+    // redisUrlCorrected
 
 const DEFAULT_PORT = 3000
 const ROOT_NODE_ADDRESS = `http://localhost:${DEFAULT_PORT}`
