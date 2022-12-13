@@ -13,7 +13,8 @@ const RedisUrl = () => {
     console.log('redisUrl.js -> redisUrlCorrected', redisUrlCorrected)
 
     return (
-        redisUrlCorrected
+        redisUrl
+        // redisUrlCorrected
     )
 }
 
